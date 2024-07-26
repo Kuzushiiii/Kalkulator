@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href = "design.css">
+    <title>Kalkulator Tiansyah X-RPL A</title>
+    <style>body{background-color: whitesmoke; color: black; font-family: Arial, Helvetica, sans-serif;
+        text-align: center;}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script src="index.js"></script>
+    <script>
+        var namaKu = "Muhammad Tiansyah Wahyudi Putra / 25";
+        var kelasKu = "\n\nX-RPA";
+
+        alert(namaKu + kelasKu)
+    </script>
+    <h2>Kalkulator Sederhana</h2> <br>
+    <p>Tugas : Kalkulator Sederhana</p>
+    <p>Nama : M Tiansyah Wahyudi Putra / 25 / RPL A</p> <br>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Mitr', sans-serif;
+            user-select: none;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(216, 216, 216);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #fd8802;
+            background-image: linear-gradient(to bottom right,#fd8802 , #fd8802);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container input {
+            margin-bottom: 30px;
+            width: 100%;
+            background-color: white;
+            border: none;
+            text-align: right;
+            font-size: 28px;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .btns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: #3c7dd3;
+            border: none;
+            padding: 10px;
+            font-size: 17px;
+            outline: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:active {
+            background-color: rgb(255, 255, 255);
+            transform: scale(0.95);
+        }
+
+        /* Grid positioning for specific buttons */
+        .btn:nth-child(12) {
+            grid-row-start: 3;
+            grid-row-end: 5;
+            grid-column-start: 4;
+            grid-column-end: 5;
+        }
+
+        .btn:nth-child(16) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5;
+            grid-row-end: 6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" disabled>
+        <div class="btns">
+            <button class="btn">Clear                                                                                                           </button>
+            <button class="btn backspace">Delete</button>
+            <button class="btn">/</button>
+            <button class="btn">*</button>
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn">-</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn">+</button>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn">=</button>
+            <button class="btn">0</button>
+            <button class="btn">.</button>
+        </div>
+    </div>
+    <script>
+        let btns = document.querySelectorAll(".btn");
+        let input = document.querySelector("input");
+
+        for (let element of btns) {
+            element.addEventListener("click", (e) => {
+                if (e.target.innerHTML === "=") {
+                    input.value = eval(input.value);
+                } else if (e.target.innerHTML === "Clear") {  
+                    input.value = "";
+                } else if (e.target.innerHTML === "Delete") {
+                    input.value = input.value.substring(0, input.value.length - 1);
+                } else {
+                    input.value += e.target.innerHTML.trim();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
